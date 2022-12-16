@@ -1,6 +1,4 @@
-package fr.univ.savoie.isc
-
--savoie.isc;
+package fr.univ.savoie.isc;
 
 import static org.junit.Assert.assertTrue;
 
