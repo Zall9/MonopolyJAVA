@@ -1,2 +1,2 @@
 # MonopolyJAVA
-TP Created by Yuss, Rémi , Paul et Amaury
+TP Created by Husseyin, Rémi , Paul et Amaury
