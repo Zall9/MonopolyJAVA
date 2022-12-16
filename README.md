@@ -1,2 +1,2 @@
 # MonopolyJAVA
-Hey stepBro, I'm stuck
+TP Created by Yuss, Rémi , Paul et Amaury
