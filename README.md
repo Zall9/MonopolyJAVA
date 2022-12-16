@@ -1,2 +1,2 @@
 # MonopolyJAVA
-Hey stepBro
+Hey stepBro, I'm stuck
