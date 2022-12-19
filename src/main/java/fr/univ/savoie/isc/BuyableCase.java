@@ -38,8 +38,7 @@ public abstract class BuyableCase extends Case {
         return this.district;
     }
 
-    void setDistrict(District district) {
+    public void setDistrict(District district) {
         this.district = district;
     }
-
 }

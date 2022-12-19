@@ -15,6 +15,5 @@ public class AngleCase extends Case {
     @Override
     public void actionOnPass(Player player) {
         // TODO actionOnPass AngleCase
-        
     }
 }

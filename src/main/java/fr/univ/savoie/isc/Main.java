@@ -4,8 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("MONOPOLY");
-
-        Game game = new Game();
+        System.out.println("MONOPOLY\n");
+        new Game();
     }
 }

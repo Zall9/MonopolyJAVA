@@ -3,6 +3,7 @@ package fr.univ.savoie.isc;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Game {
 
@@ -10,6 +11,8 @@ public class Game {
     private List<Case> cases = new ArrayList<Case>();
     private List<District> districts = new ArrayList<District>();
     private Player currentPlayer;
+
+    private int currentPlayerIndex;
 
     public Game() {
         // http://www.monopolypedia.fr/editions/france/classique2014/monopoly-classique-plateau.jpg
@@ -66,6 +69,7 @@ public class Game {
 
 
         // add all cases
+        cases.add(c0);
         cases.add(c1);
         cases.add(c2);
         cases.add(c3);
@@ -134,34 +138,58 @@ public class Game {
 
         brown.addBuyableCase(c1);
         brown.addBuyableCase(c3);
+        c1.setDistrict(brown);
+        c3.setDistrict(brown);
 
         lightBlue.addBuyableCase(c6);
         lightBlue.addBuyableCase(c8);
         lightBlue.addBuyableCase(c9);
+        c6.setDistrict(lightBlue);
+        c8.setDistrict(lightBlue);
+        c9.setDistrict(lightBlue);
 
         violet.addBuyableCase(c11);
         violet.addBuyableCase(c13);
         violet.addBuyableCase(c14);
+        c11.setDistrict(violet);
+        c13.setDistrict(violet);
+        c14.setDistrict(violet);
 
         orange.addBuyableCase(c16);
         orange.addBuyableCase(c18);
         orange.addBuyableCase(c19);
+        c16.setDistrict(orange);
+        c18.setDistrict(orange);
+        c19.setDistrict(orange);
 
         red.addBuyableCase(c21);
         red.addBuyableCase(c23);
         red.addBuyableCase(c24);
+        c21.setDistrict(red);
+        c23.setDistrict(red);
+        c24.setDistrict(red);
 
         yellow.addBuyableCase(c26);
         yellow.addBuyableCase(c27);
         yellow.addBuyableCase(c29);
+        c26.setDistrict(yellow);
+        c27.setDistrict(yellow);
+        c29.setDistrict(yellow);
 
         green.addBuyableCase(c31);
         green.addBuyableCase(c32);
         green.addBuyableCase(c34);
+        c31.setDistrict(green);
+        c32.setDistrict(green);
+        c34.setDistrict(green);
 
         darkBlue.addBuyableCase(c37);
         darkBlue.addBuyableCase(c39);
+        c37.setDistrict(darkBlue);
+        c39.setDistrict(darkBlue);
 
+        // Start the game
+        initGame();
     }
 
     public int throwDice() {
@@ -184,6 +212,58 @@ public class Game {
 
     public void onClickBuild() {
         //TODO onClickBuild Game
+    }
+
+
+    public void initGame() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("How many player are you ? (please enter a valid integer) : ");
+        int nbPlayers = scanner.nextInt();
+
+        System.out.println("Name all the player (press ENTER between each) :");
+        List<String> playerNames = new ArrayList<String>();
+
+        scanner.nextLine();
+        for(int i=0; i<nbPlayers; i++) {
+            System.out.print("Player " + (i+1) + " : ");
+            playerNames.add(scanner.nextLine());
+        }
+
+
+        for(String playerName: playerNames) {
+            this.players.add(new Player(playerName, cases.get(0)));
+        }
+
+        this.currentPlayerIndex = 0;
+
+        this.nextTurn();
+    }
+
+
+    private void nextTurn() {
+        this.currentPlayer = players.get(currentPlayerIndex);
+        int diceResult = throwDice();
+
+        System.out.println(this.currentPlayer.getName() + " turn !");
+        System.out.println("Dice Throw : " + diceResult);
+
+        this.currentPlayer.move(diceResult);
+
+        handleNewTurn();
+    }
+
+    private void handleNewTurn() {
+        this.currentPlayerIndex++;
+
+        if (this.currentPlayerIndex >= this.players.size()) {
+            this.currentPlayerIndex = 0;
+        }
+
+        System.out.println("press ENTER to end your turn");
+        new Scanner(System.in).nextLine();
+
+        nextTurn();
     }
 
 }

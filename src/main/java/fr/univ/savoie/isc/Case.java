@@ -21,8 +21,8 @@ public abstract class Case {
         this.next = next;
     }
 
-    public abstract void action(Player p1);
+    public abstract void action(Player player);
 
-    public abstract void actionOnPass(Player p1);
+    public abstract void actionOnPass(Player player);
 
 }

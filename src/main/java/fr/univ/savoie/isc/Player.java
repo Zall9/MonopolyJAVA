@@ -40,7 +40,16 @@ public class Player {
     }
 
     public void move(int diceResult) {
-        //TODO move Player
+        System.out.println("diceResult : " + diceResult);
+        System.out.println("start at : " + this.position.getName());
+        for(int i=0; i<diceResult; i++) {
+            this.position = this.position.getNext();
+            this.position.actionOnPass(this);
+
+            System.out.println("i : " + i);
+            System.out.println("position : " + this.position.getName());
+        }
+        this.position.action(this);
     }
 
     public void buy() {
@@ -64,5 +73,9 @@ public class Player {
 
     public List<BuyableCase> getProperties() {
         return this.properties;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
