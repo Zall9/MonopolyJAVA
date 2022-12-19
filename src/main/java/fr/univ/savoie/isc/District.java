@@ -5,27 +5,21 @@ import java.util.List;
 public class District {
 
     private String name;
-    private int housePrice;
-    private int hotelPrice;
+    private int buildPrice;
 
     private List<BuyableCase> buyableCases = new ArrayList<BuyableCase>();
 
-    public District(String name, int housePrice, int hotelPrice) {
+    public District(String name, int buildPrice) {
         this.name = name;
-        this.housePrice = housePrice;
-        this.hotelPrice = hotelPrice;
+        this.buildPrice = buildPrice;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public int getHousePrice() {
-        return this.housePrice;
-    }
-
-    public int getHotelPrice() {
-        return this.hotelPrice;
+    public int getBuildPrice() {
+        return this.buildPrice;
     }
 
     public List<BuyableCase> getBuyableCases() {

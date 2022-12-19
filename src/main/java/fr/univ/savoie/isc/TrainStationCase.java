@@ -29,13 +29,13 @@ public class TrainStationCase extends BuyableCase {
 
     @Override
     public void action(Player player) {
-        // TODO Auto-generated method stub
+        //TODO action TrainStationCase
 
     }
 
     @Override
     public void buy(Player player) {
-        // TODO Auto-generated method stub
+        //TODO buy TrainStationCase
     }
 
     @Override

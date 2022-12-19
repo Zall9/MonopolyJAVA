@@ -13,11 +13,11 @@ public abstract class Case {
         return this.name;
     }
 
-    private Case getNext() {
+    public Case getNext() {
         return this.next;
     }
 
-    private void setNext(Case next) {
+    public void setNext(Case next) {
         this.next = next;
     }
 

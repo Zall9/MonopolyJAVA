@@ -13,7 +13,7 @@ public class Player {
     public Player(String name, Case depart) {
         this.name = name;
         this.position = depart;
-        this.money = 5000;
+        this.money = 1500;
         this.properties = new ArrayList<BuyableCase>();
     }
 
