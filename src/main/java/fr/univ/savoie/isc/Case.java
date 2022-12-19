@@ -9,7 +9,7 @@ public abstract class Case {
         this.next = null;
     }
 
-    private String getName() {
+    public String getName() {
         return this.name;
     }
 
