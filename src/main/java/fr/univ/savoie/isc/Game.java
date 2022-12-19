@@ -2,46 +2,40 @@ package fr.univ.savoie.isc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
 
-    private List<Player> player = new ArrayList<Player>();
-
+    private List<Player> players = new ArrayList<Player>();
     private List<Case> cases = new ArrayList<Case>();
+    private List<District> districts = new ArrayList<District>();
+    private Player currentPlayer;
 
-    private List<Case> getCases() {
-        // Automatically generated method. Please do not modify this code.
-        return this.cases;
-    }
-
-    private void setCases(List<Case> value) {
-        // Automatically generated method. Please do not modify this code.
-        this.cases = value;
-    }
-
-    private List<District> district = new ArrayList<District>();
-
-    private List<District> getDistrict() {
-        // Automatically generated method. Please do not modify this code.
-        return this.district;
-    }
-
-    private void setDistrict(List<District> value) {
-        // Automatically generated method. Please do not modify this code.
-        this.district = value;
+    public Game() {
+        //TODO constructor Game
+        // build the board here
     }
 
     public int throwDice() {
-        return 0;
+        int numberOfDice = 2;
+        int diceResult = 0;
+
+        for(int i=0; i<numberOfDice; i++)
+            diceResult += new Random().nextInt(6) + 1;
+
+        return diceResult;
     }
 
     public void onClickBuy() {
+        //TODO onClickBuy Game
     }
 
     public void onClickShowBuildable() {
+        this.currentPlayer.showMyBuildables();
     }
 
     public void onClickBuild() {
+        //TODO onClickBuild Game
     }
 
 }

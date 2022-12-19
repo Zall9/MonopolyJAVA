@@ -2,145 +2,93 @@ package fr.univ.savoie.isc;
 
 public class PropertyCase extends BuyableCase {
 
-    private String rent1House;
-
-    private String getRent1House() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rent1House;
-    }
-
-    private void setRent1House(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rent1House = value;
-    }
-
-    private String rent2House;
-
-    private String getRent2House() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rent2House;
-    }
-
-    private void setRent2House(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rent2House = value;
-    }
-
-    private String rent3House;
-
-    private String getRent3House() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rent3House;
-    }
-
-    private void setRent3House(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rent3House = value;
-    }
-
-    private String rent4House;
-
-    private String getRent4House() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rent4House;
-    }
-
-    private void setRent4House(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rent4House = value;
-    }
-
-    private String rentHotel;
-
-    private String getRentHotel() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rentHotel;
-    }
-
-    private void setRentHotel(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rentHotel = value;
-    }
-
-    private double rentEmpty;
-
-    private double getRentEmpty() {
-        // Automatically generated method. Please do not modify this code.
-        return this.rentEmpty;
-    }
-
-    private void setRentEmpty(double value) {
-        // Automatically generated method. Please do not modify this code.
-        this.rentEmpty = value;
-    }
+    private int rentEmpty;
+    private int rent1House;
+    private int rent2House;
+    private int rent3House;
+    private int rent4House;
+    private int rentHotel;
 
     private int nbHouse;
 
-    private int getNbHouse() {
-        // Automatically generated method. Please do not modify this code.
+    private State state;
+
+    public PropertyCase(String name, int price, int rentEmpty, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel) {
+        super(name, price);
+        this.rentEmpty = rentEmpty;
+        this.rent1House = rent1House;
+        this.rent2House = rent2House;
+        this.rent3House = rent3House;
+        this.rent4House = rent4House;
+        this.rentHotel = rentHotel;
+        this.nbHouse = 0;
+        this.state = new AvailableState(this);
+    }
+
+    public int getRentEmpty() {
+        return this.rentEmpty;
+    }
+
+    public int getRent1House() {
+        return this.rent1House;
+    }
+
+    public int getRent2House() {
+        return this.rent2House;
+    }
+
+    public int getRent3House() {
+        return this.rent3House;
+    }
+
+    public int getRent4House() {
+        return this.rent4House;
+    }
+
+    public int getRentHotel() {
+        return this.rentHotel;
+    }
+
+    public int getNbHouse() {
         return this.nbHouse;
     }
 
-    private void setNbHouse(int value) {
-        // Automatically generated method. Please do not modify this code.
+    public void setNbHouse(int value) {
         this.nbHouse = value;
-    }
-
-    private State etat;
-
-    public State getEtat() {
-        // Automatically generated method. Please do not modify this code.
-        return this.etat;
-    }
-
-    public void setEtat(State value) {
-        // Automatically generated method. Please do not modify this code.
-        this.etat = value;
-    }
-
-    public void buyHouse() {
-    }
-
-    public void buyHotel() {
-    }
-
-    public void setState(State p1) {
-    }
-
-    @Override
-    public void becomeBuildable() {
-        // TODO Auto-generated method stub
-        
     }
 
     @Override
     public void becomeBought() {
-        // TODO Auto-generated method stub
-        
+        this.state = new BoughtState(this);
+    }
+
+    @Override
+    public void becomeBuildable() {
+        this.state = new BuildableState(this);
+    }
+
+
+    @Override
+    public void action(Player player) {
+        this.state.action(player);
+    }
+
+    @Override
+    public void actionOnPass(Player player) { }
+
+
+    @Override
+    public void buy(Player player) {
+        this.state.buy();
     }
 
     @Override
     public void showBuildable() {
-        // TODO Auto-generated method stub
-        
+        this.state.showBuildable();
     }
 
     @Override
     public void build() {
-        // TODO Auto-generated method stub
-        
+        this.state.build();
     }
-
-    @Override
-    public void action(Player p1) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void actionOnPass(Player p1) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }

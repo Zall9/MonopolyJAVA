@@ -1,16 +1,15 @@
 package fr.univ.savoie.isc;
 
-
-public class BoughtState implements State {
+public class HotelBuiltState implements State {
 
     private PropertyCase propertyCase;
 
-    public BoughtState(PropertyCase propertyCase) {
+    public HotelBuiltState(PropertyCase propertyCase) {
         this.propertyCase = propertyCase;
     }
 
     public void action(Player player) {
-        //TODO action BoughtState
+        //TODO action HotelBuiltState
     }
 
     public void buy() { }

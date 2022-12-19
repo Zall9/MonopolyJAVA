@@ -2,39 +2,34 @@ package fr.univ.savoie.isc;
 
 public class EnergyCase extends BuyableCase {
 
-    @Override
-    public void becomeBuildable() {
-        // TODO Auto-generated method stub
-        
+    public EnergyCase(String name, int price) {
+        super(name, price);
     }
 
     @Override
-    public void becomeBought() {
-        // TODO Auto-generated method stub
-        
+    public void action(Player player) {
+        //TODO action EnergyCase
+
     }
 
     @Override
-    public void showBuildable() {
-        // TODO Auto-generated method stub
-        
+    public void buy(Player player) {
+        //TODO buy EnergyCase
+
     }
 
     @Override
-    public void build() {
-        // TODO Auto-generated method stub
-        
-    }
+    public void becomeBuildable() { }
 
     @Override
-    public void action(Player p1) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void becomeBought() { }
 
     @Override
-    public void actionOnPass(Player p1) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void showBuildable() { }
+
+    @Override
+    public void build() { }
+
+    @Override
+    public void actionOnPass(Player player) { }
 }

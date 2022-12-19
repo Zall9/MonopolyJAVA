@@ -4,26 +4,22 @@ public class TaxCase extends Case {
 
     private int cost;
 
+    public TaxCase(String name, int cost) {
+        super(name);
+        this.cost = cost;
+    }
+
     private int getCost() {
-        // Automatically generated method. Please do not modify this code.
         return this.cost;
     }
 
-    private void setCost(int value) {
-        // Automatically generated method. Please do not modify this code.
-        this.cost = value;
-    }
-
     @Override
-    public void action(Player p1) {
-        // TODO Auto-generated method stub
+    public void action(Player player) {
+        // TODO action TaxCase
         
     }
 
     @Override
-    public void actionOnPass(Player p1) {
-        // TODO Auto-generated method stub
-        
-    }
+    public void actionOnPass(Player player) { }
 
 }

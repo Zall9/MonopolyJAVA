@@ -2,34 +2,23 @@ package fr.univ.savoie.isc;
 
 public class BuildableState implements State {
 
-    public void action(Player p1) {
+    private PropertyCase propertyCase;
+
+    public BuildableState(PropertyCase propertyCase) {
+        this.propertyCase = propertyCase;
     }
 
-    public void buy() {
+    public void action(Player player) {
+        //TODO action BuildableState
     }
 
-    public void buyHouse() {
-    }
-
-    public void buyHotel() {
-    }
+    public void buy() { }
 
     public void showBuildable() {
+        //TODO showBuildable BuildableState
     }
 
     public void build() {
+        //TODO build BuildableState
     }
-
-    @Override
-    public PropertyCase get() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void set(PropertyCase value) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }

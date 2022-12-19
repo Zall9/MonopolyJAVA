@@ -1,61 +1,68 @@
 package fr.univ.savoie.isc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
+    private String name;
     private double money;
+    private Case position;
+    private List<BuyableCase> properties;
 
-    private double getMoney() {
-        // Automatically generated method. Please do not modify this code.
+    public Player(String name, Case depart) {
+        this.name = name;
+        this.position = depart;
+        this.money = 5000;
+        this.properties = new ArrayList<BuyableCase>();
+    }
+
+
+    public double getMoney() {
         return this.money;
     }
 
     private void setMoney(double value) {
-        // Automatically generated method. Please do not modify this code.
         this.money = value;
     }
 
-    private Case position;
-
-    private Case getPosition() {
-        // Automatically generated method. Please do not modify this code.
+    public Case getPosition() {
         return this.position;
     }
 
     private void setPosition(Case value) {
-        // Automatically generated method. Please do not modify this code.
         this.position = value;
     }
 
-    private BuyableCase properties;
 
-    public void addProperty(BuyableCase p1) {
+    public void addProperty(BuyableCase property) {
+        this.properties.add(property);
     }
 
-    public void move(int p1) {
+    public void move(int diceResult) {
+        //TODO move Player
     }
 
     public void buy() {
+        //TODO buy Player
     }
 
     public void showMyBuildables() {
+        for (BuyableCase bc: this.properties) {
+            bc.showBuildable();
+        }
     }
 
     public void pay(Player owner, int price) {
+        this.money -= price;
+        owner.getPaid(price);
     }
 
     public void getPaid(int rent) {
+        this.money += rent;
     }
 
-    BuyableCase getProperties() {
-        // Automatically generated method. Please delete this comment before entering
-        // specific code.
+    public List<BuyableCase> getProperties() {
         return this.properties;
     }
-
-    void setProperties(BuyableCase value) {
-        // Automatically generated method. Please delete this comment before entering
-        // specific code.
-        this.properties = value;
-    }
-
 }

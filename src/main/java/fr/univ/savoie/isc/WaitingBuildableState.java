@@ -2,7 +2,13 @@ package fr.univ.savoie.isc;
 
 public class WaitingBuildableState implements State {
 
-    public void action(Player p1) {
+    private PropertyCase propertyCase;
+
+    public WaitingBuildableState(PropertyCase propertyCase) {
+        this.propertyCase = propertyCase;
+    }
+
+    public void action(Player player) {
     }
 
     public void buy() {
@@ -19,17 +25,4 @@ public class WaitingBuildableState implements State {
 
     public void build() {
     }
-
-    @Override
-    public PropertyCase get() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void set(PropertyCase value) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }

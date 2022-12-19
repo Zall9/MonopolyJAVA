@@ -5,54 +5,41 @@ import java.util.List;
 public class District {
 
     private String name;
+    private int housePrice;
+    private int hotelPrice;
 
-    private String getName() {
-        // Automatically generated method. Please do not modify this code.
+    private List<BuyableCase> buyableCases = new ArrayList<BuyableCase>();
+
+    public District(String name, int housePrice, int hotelPrice) {
+        this.name = name;
+        this.housePrice = housePrice;
+        this.hotelPrice = hotelPrice;
+    }
+
+    public String getName() {
         return this.name;
     }
 
-    private void setName(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.name = value;
-    }
-
-    private int housePrice;
-
-    private int getHousePrice() {
-        // Automatically generated method. Please do not modify this code.
+    public int getHousePrice() {
         return this.housePrice;
     }
 
-    private void setHousePrice(int value) {
-        // Automatically generated method. Please do not modify this code.
-        this.housePrice = value;
-    }
-
-    private String hotelPrice;
-
-    private String getHotelPrice() {
-        // Automatically generated method. Please do not modify this code.
+    public int getHotelPrice() {
         return this.hotelPrice;
     }
 
-    private void setHotelPrice(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.hotelPrice = value;
+    public List<BuyableCase> getBuyableCases() {
+        return this.buyableCases;
     }
 
-    private List<BuyableCase> buyableCase = new ArrayList<BuyableCase>();
-
-    private List<BuyableCase> getBuyableCase() {
-        // Automatically generated method. Please do not modify this code.
-        return this.buyableCase;
+    public void addBuyableCase(BuyableCase buyableCase) {
+        this.buyableCases.add(buyableCase);
     }
 
-    private void setBuyableCase(List<BuyableCase> value) {
-        // Automatically generated method. Please do not modify this code.
-        this.buyableCase = value;
-    }
 
     public void manageDistrictState() {
+        // TODO manageDistrictState District
+
     }
 
 }

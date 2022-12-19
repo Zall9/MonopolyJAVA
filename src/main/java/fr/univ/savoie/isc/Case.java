@@ -1,29 +1,24 @@
 package fr.univ.savoie.isc;
 
 public abstract class Case {
-
     private String name;
+    private Case next;
+
+    public Case(String name) {
+        this.name = name;
+        this.next = null;
+    }
 
     private String getName() {
-        // Automatically generated method. Please do not modify this code.
         return this.name;
     }
 
-    private void setName(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.name = value;
+    private Case getNext() {
+        return this.next;
     }
 
-    private Case suivante;
-
-    private Case getSuivante() {
-        // Automatically generated method. Please do not modify this code.
-        return this.suivante;
-    }
-
-    private void setSuivante(Case value) {
-        // Automatically generated method. Please do not modify this code.
-        this.suivante = value;
+    private void setNext(Case next) {
+        this.next = next;
     }
 
     public abstract void action(Player p1);
