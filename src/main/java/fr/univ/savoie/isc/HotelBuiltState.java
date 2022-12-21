@@ -17,4 +17,9 @@ public class HotelBuiltState implements State {
     public void showBuildable() { }
 
     public void build() { }
+
+
+    public String toString() {
+        return "HotelBuiltState";
+    }
 }

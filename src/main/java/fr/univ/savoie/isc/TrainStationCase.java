@@ -34,11 +34,6 @@ public class TrainStationCase extends BuyableCase {
     }
 
     @Override
-    public void buy(Player player) {
-        //TODO buy TrainStationCase
-    }
-
-    @Override
     public void becomeBuildable() { }
 
     @Override

@@ -13,12 +13,6 @@ public class EnergyCase extends BuyableCase {
     }
 
     @Override
-    public void buy(Player player) {
-        //TODO buy EnergyCase
-
-    }
-
-    @Override
     public void becomeBuildable() { }
 
     @Override

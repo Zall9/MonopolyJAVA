@@ -21,4 +21,8 @@ public class BuildableState implements State {
     public void build() {
         //TODO build BuildableState
     }
+
+    public String toString() {
+        return "BuildableState";
+    }
 }

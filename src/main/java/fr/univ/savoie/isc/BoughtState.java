@@ -10,7 +10,9 @@ public class BoughtState implements State {
     }
 
     public void action(Player player) {
-        //TODO action BoughtState
+        System.out.println(this.propertyCase.getName() + " is own by " + this.propertyCase.getOwner().getName());
+        System.out.println("You need to pay " + this.propertyCase.getPrice());
+        player.pay(this.propertyCase.getOwner(), this.propertyCase.getPrice());
     }
 
     public void buy() { }
@@ -18,4 +20,8 @@ public class BoughtState implements State {
     public void showBuildable() { }
 
     public void build() { }
+
+    public String toString() {
+        return "BoughtState";
+    }
 }

@@ -25,4 +25,8 @@ public class WaitingBuildableState implements State {
 
     public void build() {
     }
+
+    public String toString() {
+        return "WaitingBuildableState";
+    }
 }

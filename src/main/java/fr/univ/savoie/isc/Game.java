@@ -21,51 +21,51 @@ public class Game {
 
         // bottom
         AngleCase        c0  = new AngleCase("DEPART");
-        BuyableCase      c1  = new PropertyCase("BOULEVARD DE BELLEVILLE", 60, 2, 10, 30, 90, 160, 250);
+        PropertyCase     c1  = new PropertyCase("BOULEVARD DE BELLEVILLE", 60, 2, 10, 30, 90, 160, 250);
         AngleCase        c2  = new AngleCase("CAISSE DE COMMUNAUTE");
-        BuyableCase      c3  = new PropertyCase("RUE LECOURBE", 60, 4, 20, 60, 180, 320, 450);
+        PropertyCase     c3  = new PropertyCase("RUE LECOURBE", 60, 4, 20, 60, 180, 320, 450);
         TaxCase          c4  = new TaxCase("IMPOTS SUR LE REVENU", 200);
         TrainStationCase c5  = new TrainStationCase("GARE MONTPARNASSE", 200);
-        BuyableCase      c6  = new PropertyCase("RUE VAUGIRARD", 100, 6, 30, 90, 270, 400, 550);
+        PropertyCase     c6  = new PropertyCase("RUE VAUGIRARD", 100, 6, 30, 90, 270, 400, 550);
         AngleCase        c7  = new AngleCase("CHANCE");
-        BuyableCase      c8  = new PropertyCase("RUE DE COURCELLES", 100, 6, 30, 90, 270, 400, 550);
-        BuyableCase      c9  = new PropertyCase("AVENUE DE LA REPUBLIQUE", 120, 8, 40, 100, 300, 450, 600);
+        PropertyCase     c8  = new PropertyCase("RUE DE COURCELLES", 100, 6, 30, 90, 270, 400, 550);
+        PropertyCase     c9  = new PropertyCase("AVENUE DE LA REPUBLIQUE", 120, 8, 40, 100, 300, 450, 600);
 
         // left
         AngleCase        c10 = new AngleCase("PRISON");
-        BuyableCase      c11 = new PropertyCase("BOULEVARD DE LA VILETTE", 140, 10, 50, 150, 450, 625, 750);
+        PropertyCase     c11 = new PropertyCase("BOULEVARD DE LA VILETTE", 140, 10, 50, 150, 450, 625, 750);
         EnergyCase       c12 = new EnergyCase("COMPAGNIE DE DISTRIBUTION D'ELECTICITE", 150);
-        BuyableCase      c13 = new PropertyCase("AVENUE DE NEUILLY", 140, 10, 50, 150, 450, 625, 750);
+        PropertyCase     c13 = new PropertyCase("AVENUE DE NEUILLY", 140, 10, 50, 150, 450, 625, 750);
         PropertyCase     c14 = new PropertyCase("RUE DE PARADIS", 160, 12, 60, 180, 500, 700, 900);
         TrainStationCase c15 = new TrainStationCase("GARE DE LYON", 200);
-        BuyableCase      c16 = new PropertyCase("AVENUE MOZART", 180, 14, 70, 200, 550, 750, 950);
+        PropertyCase     c16 = new PropertyCase("AVENUE MOZART", 180, 14, 70, 200, 550, 750, 950);
         AngleCase        c17 = new AngleCase("CAISSE DE COMMUNAUTE");
-        BuyableCase      c18 = new PropertyCase("BOULEVARD SAINT-MICHEL", 180, 14, 70, 200, 550, 750, 950);
-        BuyableCase      c19 = new PropertyCase("PLACE PIGALLE", 200, 16, 80, 220, 600, 800, 1000);
+        PropertyCase     c18 = new PropertyCase("BOULEVARD SAINT-MICHEL", 180, 14, 70, 200, 550, 750, 950);
+        PropertyCase     c19 = new PropertyCase("PLACE PIGALLE", 200, 16, 80, 220, 600, 800, 1000);
 
         // top
         AngleCase        c20 = new AngleCase("PARC GRATUIT");
-        BuyableCase      c21 = new PropertyCase("AVENUE MATIGNON", 220, 18, 90, 250, 700, 875, 1050);
+        PropertyCase     c21 = new PropertyCase("AVENUE MATIGNON", 220, 18, 90, 250, 700, 875, 1050);
         AngleCase        c22 = new AngleCase("CHANCE");
         PropertyCase     c23 = new PropertyCase("BOULEVARD MALESHERBES", 220, 18, 90, 250, 700, 875, 1050);
         PropertyCase     c24 = new PropertyCase("AVENUE HENRI-MARTIN", 240, 20, 100, 300, 750, 925, 1100);
         TrainStationCase c25 = new TrainStationCase("GARE DU NORD", 200);
-        BuyableCase      c26 = new PropertyCase("FAUBOURG SAINT-HONORE", 260, 22, 110, 330, 800, 975, 1150);
+        PropertyCase     c26 = new PropertyCase("FAUBOURG SAINT-HONORE", 260, 22, 110, 330, 800, 975, 1150);
         PropertyCase     c27 = new PropertyCase("PLACE DE LA BOURSE", 260, 22, 110, 330, 800, 975, 1150);
         EnergyCase       c28 = new EnergyCase("COMPAGNIE DE DISTRIBUTION DES EAUX", 150);
-        BuyableCase      c29 = new PropertyCase("RUE LA FAYETTE", 280, 24, 120, 360, 850, 1025, 1200);
+        PropertyCase     c29 = new PropertyCase("RUE LA FAYETTE", 280, 24, 120, 360, 850, 1025, 1200);
 
         // bottom
         AngleCase        c30 = new AngleCase("ALLEZ EN PRISON");
-        BuyableCase      c31 = new PropertyCase("AVENUE DE BRETEUIL", 300, 26, 130, 390, 900, 1100, 1275);
-        BuyableCase      c32 = new PropertyCase("AVENUE FOCH", 300, 26, 130, 390, 900, 1100, 1275);
+        PropertyCase     c31 = new PropertyCase("AVENUE DE BRETEUIL", 300, 26, 130, 390, 900, 1100, 1275);
+        PropertyCase     c32 = new PropertyCase("AVENUE FOCH", 300, 26, 130, 390, 900, 1100, 1275);
         AngleCase        c33 = new AngleCase("CAISSE DE COMMUNAUTE");
         PropertyCase     c34 = new PropertyCase("BOULEVARD DES CAPUCINE", 320, 28, 150, 450, 1000, 1200, 1400);
         TrainStationCase c35 = new TrainStationCase("GARE SAINT-LAZARE", 200);
         AngleCase        c36 = new AngleCase("CHANCE");
-        BuyableCase      c37 = new PropertyCase("AVENUE DES CHAMPS-ELYSEES", 350, 35, 175, 500, 1100, 1300, 1500);
+        PropertyCase     c37 = new PropertyCase("AVENUE DES CHAMPS-ELYSEES", 350, 35, 175, 500, 1100, 1300, 1500);
         TaxCase          c38 = new TaxCase("TAXE DE LUXE", 100);
-        BuyableCase      c39 = new PropertyCase("RUE DE LA PAIX", 400, 50, 200, 600, 1400, 1700, 2000);
+        PropertyCase     c39 = new PropertyCase("RUE DE LA PAIX", 400, 50, 200, 600, 1400, 1700, 2000);
 
 
         // add all cases
@@ -136,55 +136,55 @@ public class Game {
         this.districts.add(green);
         this.districts.add(darkBlue);
 
-        brown.addBuyableCase(c1);
-        brown.addBuyableCase(c3);
+        brown.addPropertyCase(c1);
+        brown.addPropertyCase(c3);
         c1.setDistrict(brown);
         c3.setDistrict(brown);
 
-        lightBlue.addBuyableCase(c6);
-        lightBlue.addBuyableCase(c8);
-        lightBlue.addBuyableCase(c9);
+        lightBlue.addPropertyCase(c6);
+        lightBlue.addPropertyCase(c8);
+        lightBlue.addPropertyCase(c9);
         c6.setDistrict(lightBlue);
         c8.setDistrict(lightBlue);
         c9.setDistrict(lightBlue);
 
-        violet.addBuyableCase(c11);
-        violet.addBuyableCase(c13);
-        violet.addBuyableCase(c14);
+        violet.addPropertyCase(c11);
+        violet.addPropertyCase(c13);
+        violet.addPropertyCase(c14);
         c11.setDistrict(violet);
         c13.setDistrict(violet);
         c14.setDistrict(violet);
 
-        orange.addBuyableCase(c16);
-        orange.addBuyableCase(c18);
-        orange.addBuyableCase(c19);
+        orange.addPropertyCase(c16);
+        orange.addPropertyCase(c18);
+        orange.addPropertyCase(c19);
         c16.setDistrict(orange);
         c18.setDistrict(orange);
         c19.setDistrict(orange);
 
-        red.addBuyableCase(c21);
-        red.addBuyableCase(c23);
-        red.addBuyableCase(c24);
+        red.addPropertyCase(c21);
+        red.addPropertyCase(c23);
+        red.addPropertyCase(c24);
         c21.setDistrict(red);
         c23.setDistrict(red);
         c24.setDistrict(red);
 
-        yellow.addBuyableCase(c26);
-        yellow.addBuyableCase(c27);
-        yellow.addBuyableCase(c29);
+        yellow.addPropertyCase(c26);
+        yellow.addPropertyCase(c27);
+        yellow.addPropertyCase(c29);
         c26.setDistrict(yellow);
         c27.setDistrict(yellow);
         c29.setDistrict(yellow);
 
-        green.addBuyableCase(c31);
-        green.addBuyableCase(c32);
-        green.addBuyableCase(c34);
+        green.addPropertyCase(c31);
+        green.addPropertyCase(c32);
+        green.addPropertyCase(c34);
         c31.setDistrict(green);
         c32.setDistrict(green);
         c34.setDistrict(green);
 
-        darkBlue.addBuyableCase(c37);
-        darkBlue.addBuyableCase(c39);
+        darkBlue.addPropertyCase(c37);
+        darkBlue.addPropertyCase(c39);
         c37.setDistrict(darkBlue);
         c39.setDistrict(darkBlue);
 
@@ -199,7 +199,7 @@ public class Game {
         for(int i=0; i<numberOfDice; i++)
             diceResult += new Random().nextInt(6) + 1;
 
-        return diceResult;
+        return 1;
     }
 
     public void onClickBuy() {

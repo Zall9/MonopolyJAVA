@@ -1,6 +1,8 @@
 package fr.univ.savoie.isc;
 
 
+import java.util.Scanner;
+
 public class AvailableState implements State {
 
     private PropertyCase propertyCase;
@@ -10,20 +12,28 @@ public class AvailableState implements State {
     }
 
     public void action(Player player) {
-        //TODO action AvailableState
-        System.out.println("action on " + this.propertyCase.getName());
-        /* il ne faudrait pas que cette fonction affiche des choses dans la console,
-        il faut trouver un moyen de faire remonter l'info que la case est disponible a l'achat
-        cette info doit remonter jusqu'a la classe Game pour que cette dernière puisse
-        proposer l'achat, l'achat est lancé avec la fonction onClickBuy() de la classe Game
-         */
+        System.out.println("Do you want to buy " + this.propertyCase.getName() + " ? ");
+        System.out.println("1 - YES");
+        System.out.println("2 - NO");
+        System.out.print("> ");
+
+        int choice = new Scanner(System.in).nextInt();
+
+        if (choice == 1) {
+            this.buy(player);
+        }
     }
 
-    public void buy() {
-        //TODO buy AvailableState
+    public void buy(Player player) {
+        player.buy(this.propertyCase);
+        this.propertyCase.getDistrict().manageDistrictState();
     }
 
     public void showBuildable() { }
 
     public void build() { }
+
+    public String toString() {
+        return "AvailableState";
+    }
 }

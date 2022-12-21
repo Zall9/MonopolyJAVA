@@ -40,20 +40,18 @@ public class Player {
     }
 
     public void move(int diceResult) {
-        System.out.println("diceResult : " + diceResult);
-        System.out.println("start at : " + this.position.getName());
         for(int i=0; i<diceResult; i++) {
             this.position = this.position.getNext();
             this.position.actionOnPass(this);
-
-            System.out.println("i : " + i);
-            System.out.println("position : " + this.position.getName());
         }
+        System.out.println("You are now on : " + this.position.getName());
         this.position.action(this);
     }
 
-    public void buy() {
-        //TODO buy Player
+    public void buy(BuyableCase buyableCase) {
+        buyableCase.setOwner(this);
+        this.addProperty(buyableCase);
+        this.money -= buyableCase.getPrice();
     }
 
     public void showMyBuildables() {

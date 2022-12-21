@@ -9,9 +9,8 @@ public abstract class BuyableCase extends Case {
     public BuyableCase(String name, int price) {
         super(name);
         this.price = price;
+        this.owner = null;
     }
-
-    public abstract void buy(Player player);
 
     public abstract void becomeBought();
 
@@ -22,15 +21,15 @@ public abstract class BuyableCase extends Case {
     public abstract void build();
 
 
-    private int getPrice() {
+    public int getPrice() {
         return this.price;
     }
 
-    private Player getOwner() {
+    public Player getOwner() {
         return this.owner;
     }
 
-    private void setOwner(Player owner) {
+    public void setOwner(Player owner) {
         this.owner = owner;
     }
 

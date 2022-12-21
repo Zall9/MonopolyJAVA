@@ -70,17 +70,12 @@ public class PropertyCase extends BuyableCase {
 
     @Override
     public void action(Player player) {
+        System.out.println("State : " + this.state.toString());
         this.state.action(player);
     }
 
     @Override
     public void actionOnPass(Player player) { }
-
-
-    @Override
-    public void buy(Player player) {
-        this.state.buy();
-    }
 
     @Override
     public void showBuildable() {
