@@ -22,12 +22,12 @@ public class Game {
         // bottom
         AngleCase        c0  = new AngleCase("DEPART",AngleCaseType.DEPART);
         PropertyCase     c1  = new PropertyCase("BOULEVARD DE BELLEVILLE", 60, 2, 10, 30, 90, 160, 250);
-        AngleCase        c2  = new AngleCase("CAISSE DE COMMUNAUTE");
+        AngleCase        c2  = new AngleCase("CAISSE DE COMMUNAUTE",AngleCaseType.CAISSE_DE_COMMUNAUTE);
         PropertyCase     c3  = new PropertyCase("RUE LECOURBE", 60, 4, 20, 60, 180, 320, 450);
         TaxCase          c4  = new TaxCase("IMPOTS SUR LE REVENU", 200);
         TrainStationCase c5  = new TrainStationCase("GARE MONTPARNASSE", 200);
         PropertyCase     c6  = new PropertyCase("RUE VAUGIRARD", 100, 6, 30, 90, 270, 400, 550);
-        AngleCase        c7  = new AngleCase("CHANCE");
+        AngleCase        c7  = new AngleCase("CHANCE",AngleCaseType.CHANCE);
         PropertyCase     c8  = new PropertyCase("RUE DE COURCELLES", 100, 6, 30, 90, 270, 400, 550);
         PropertyCase     c9  = new PropertyCase("AVENUE DE LA REPUBLIQUE", 120, 8, 40, 100, 300, 450, 600);
 
@@ -39,14 +39,14 @@ public class Game {
         PropertyCase     c14 = new PropertyCase("RUE DE PARADIS", 160, 12, 60, 180, 500, 700, 900);
         TrainStationCase c15 = new TrainStationCase("GARE DE LYON", 200);
         PropertyCase     c16 = new PropertyCase("AVENUE MOZART", 180, 14, 70, 200, 550, 750, 950);
-        AngleCase        c17 = new AngleCase("CAISSE DE COMMUNAUTE");
+        AngleCase        c17 = new AngleCase("CAISSE DE COMMUNAUTE",AngleCaseType.CAISSE_DE_COMMUNAUTE);
         PropertyCase     c18 = new PropertyCase("BOULEVARD SAINT-MICHEL", 180, 14, 70, 200, 550, 750, 950);
         PropertyCase     c19 = new PropertyCase("PLACE PIGALLE", 200, 16, 80, 220, 600, 800, 1000);
 
         // top
         AngleCase        c20 = new AngleCase("PARC GRATUIT",AngleCaseType.PARC_GRATUIT);
         PropertyCase     c21 = new PropertyCase("AVENUE MATIGNON", 220, 18, 90, 250, 700, 875, 1050);
-        AngleCase        c22 = new AngleCase("CHANCE");
+        AngleCase        c22 = new AngleCase("CHANCE",AngleCaseType.CHANCE);
         PropertyCase     c23 = new PropertyCase("BOULEVARD MALESHERBES", 220, 18, 90, 250, 700, 875, 1050);
         PropertyCase     c24 = new PropertyCase("AVENUE HENRI-MARTIN", 240, 20, 100, 300, 750, 925, 1100);
         TrainStationCase c25 = new TrainStationCase("GARE DU NORD", 200);
@@ -59,10 +59,10 @@ public class Game {
         AngleCase        c30 = new AngleCase("ALLEZ EN PRISON",AngleCaseType.ALLEZ_EN_PRISON);
         PropertyCase     c31 = new PropertyCase("AVENUE DE BRETEUIL", 300, 26, 130, 390, 900, 1100, 1275);
         PropertyCase     c32 = new PropertyCase("AVENUE FOCH", 300, 26, 130, 390, 900, 1100, 1275);
-        AngleCase        c33 = new AngleCase("CAISSE DE COMMUNAUTE");
+        AngleCase        c33 = new AngleCase("CAISSE DE COMMUNAUTE",AngleCaseType.CAISSE_DE_COMMUNAUTE);
         PropertyCase     c34 = new PropertyCase("BOULEVARD DES CAPUCINE", 320, 28, 150, 450, 1000, 1200, 1400);
         TrainStationCase c35 = new TrainStationCase("GARE SAINT-LAZARE", 200);
-        AngleCase        c36 = new AngleCase("CHANCE");
+        AngleCase        c36 = new AngleCase("CHANCE",AngleCaseType.CHANCE);
         PropertyCase     c37 = new PropertyCase("AVENUE DES CHAMPS-ELYSEES", 350, 35, 175, 500, 1100, 1300, 1500);
         TaxCase          c38 = new TaxCase("TAXE DE LUXE", 100);
         PropertyCase     c39 = new PropertyCase("RUE DE LA PAIX", 400, 50, 200, 600, 1400, 1700, 2000);
@@ -198,8 +198,7 @@ public class Game {
 
         for(int i=0; i<numberOfDice; i++)
             diceResult += new Random().nextInt(6) + 1;
-
-        return 1;
+        return diceResult;
     }
 
     public void onClickBuy() {
@@ -249,8 +248,9 @@ public class Game {
         System.out.println("Dice Throw : " + diceResult);
 
         this.currentPlayer.move(diceResult);
-
+        System.out.println("current player have: " + this.currentPlayer.getMoney() + "€");
         handleNewTurn();
+
     }
 
     private void handleNewTurn() {

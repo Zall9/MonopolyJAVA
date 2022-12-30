@@ -37,6 +37,13 @@ public class TrainStationCase extends BuyableCase {
     public void becomeBuildable() { }
 
     @Override
+    public void becomeHotelBuilt() {}
+
+    @Override
+    public void becomeWaitingbuildableState() {
+    }
+
+    @Override
     public void becomeBought() { }
 
     @Override

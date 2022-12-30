@@ -67,7 +67,14 @@ public class PropertyCase extends BuyableCase {
         this.state = new BuildableState(this);
     }
 
-
+    @Override
+    public void becomeHotelBuilt() {
+        this.state = new HotelBuiltState(this);
+    }
+    @Override
+    public void becomeWaitingbuildableState(){
+        this.state = new WaitingBuildableState(this);
+    }
     @Override
     public void action(Player player) {
         System.out.println("State : " + this.state.toString());

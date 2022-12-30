@@ -1,4 +1,5 @@
 package fr.univ.savoie.isc;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,14 +41,31 @@ public class District {
         - si commencé a construire mais en attente d'une autre construction ailleur : WaitingBuildableState
         - si hotel construit : HotelBuiltState
         */
-
-        // BoughtState
-        for (PropertyCase pc: this.propertyCases) {
+        for (PropertyCase pc : this.propertyCases) {
             if (pc.getOwner() != null) {
                 pc.becomeBought();
             }
+            for (PropertyCase pc2 : this.propertyCases) {
+                if (pc2.getOwner() != pc.getOwner()) {
+                    //pardon madame pour le break :(
+                    break;
+                }
+                pc.becomeBuildable();
+            }
+            if (pc.getNbHouse() == 4) {
+                pc.becomeHotelBuilt();
+            }
+            for (PropertyCase pc3 : this.propertyCases) {
+                if (pc3.getOwner() == pc.getOwner()) {
+                    if (pc3.getDistrict() == pc.getDistrict() && pc3.getNbHouse() < pc.getNbHouse()) {
+                        pc.becomeWaitingbuildableState();
+                    }
+
+                }
+            }
         }
     }
+
 
     private boolean haveSameOwner() {
         // on récupère le premier owner
@@ -56,7 +74,7 @@ public class District {
         String ownerName = player.getName();
 
         // on compare le premier a tous les autres
-        for (int i=1; i<this.propertyCases.size(); i++) {
+        for (int i = 1; i < this.propertyCases.size(); i++) {
             Player owner = this.propertyCases.get(i).getOwner();
 
             if (owner == null) return false;

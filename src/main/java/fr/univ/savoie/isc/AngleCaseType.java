@@ -5,4 +5,6 @@ public enum AngleCaseType {
     ALLEZ_EN_PRISON,
     PRISON,
     PARC_GRATUIT,
+    CHANCE,
+    CAISSE_DE_COMMUNAUTE;
 }
