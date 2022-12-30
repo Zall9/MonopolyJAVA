@@ -15,24 +15,20 @@ public class AngleCase extends Case {
 
     @Override
     public void action(Player player) {
+    }
+
+    @Override
+    public void actionOnPass(Player player) {
         switch (this.type) {
             case DEPART:
                 player.getPaid(200);
                 break;
             case ALLEZ_EN_PRISON:
-                while(!Objects.equals(player.getPosition().getName(), "Prison")) {
-                    player.move(1);
-                }
                 break;
             case PRISON:
                 break;
             case PARC_GRATUIT:
                 break;
         }
-    }
-
-    @Override
-    public void actionOnPass(Player player) {
-        // TODO actionOnPass AngleCase
     }
 }
