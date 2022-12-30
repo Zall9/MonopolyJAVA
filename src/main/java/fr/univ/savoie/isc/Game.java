@@ -20,7 +20,7 @@ public class Game {
         // All Cases
 
         // bottom
-        AngleCase        c0  = new AngleCase("DEPART");
+        AngleCase        c0  = new AngleCase("DEPART",AngleCaseType.DEPART);
         PropertyCase     c1  = new PropertyCase("BOULEVARD DE BELLEVILLE", 60, 2, 10, 30, 90, 160, 250);
         AngleCase        c2  = new AngleCase("CAISSE DE COMMUNAUTE");
         PropertyCase     c3  = new PropertyCase("RUE LECOURBE", 60, 4, 20, 60, 180, 320, 450);
@@ -32,7 +32,7 @@ public class Game {
         PropertyCase     c9  = new PropertyCase("AVENUE DE LA REPUBLIQUE", 120, 8, 40, 100, 300, 450, 600);
 
         // left
-        AngleCase        c10 = new AngleCase("PRISON");
+        AngleCase        c10 = new AngleCase("PRISON",AngleCaseType.PRISON);
         PropertyCase     c11 = new PropertyCase("BOULEVARD DE LA VILETTE", 140, 10, 50, 150, 450, 625, 750);
         EnergyCase       c12 = new EnergyCase("COMPAGNIE DE DISTRIBUTION D'ELECTICITE", 150);
         PropertyCase     c13 = new PropertyCase("AVENUE DE NEUILLY", 140, 10, 50, 150, 450, 625, 750);
@@ -44,7 +44,7 @@ public class Game {
         PropertyCase     c19 = new PropertyCase("PLACE PIGALLE", 200, 16, 80, 220, 600, 800, 1000);
 
         // top
-        AngleCase        c20 = new AngleCase("PARC GRATUIT");
+        AngleCase        c20 = new AngleCase("PARC GRATUIT",AngleCaseType.PARC_GRATUIT);
         PropertyCase     c21 = new PropertyCase("AVENUE MATIGNON", 220, 18, 90, 250, 700, 875, 1050);
         AngleCase        c22 = new AngleCase("CHANCE");
         PropertyCase     c23 = new PropertyCase("BOULEVARD MALESHERBES", 220, 18, 90, 250, 700, 875, 1050);
@@ -56,7 +56,7 @@ public class Game {
         PropertyCase     c29 = new PropertyCase("RUE LA FAYETTE", 280, 24, 120, 360, 850, 1025, 1200);
 
         // bottom
-        AngleCase        c30 = new AngleCase("ALLEZ EN PRISON");
+        AngleCase        c30 = new AngleCase("ALLEZ EN PRISON",AngleCaseType.ALLEZ_EN_PRISON);
         PropertyCase     c31 = new PropertyCase("AVENUE DE BRETEUIL", 300, 26, 130, 390, 900, 1100, 1275);
         PropertyCase     c32 = new PropertyCase("AVENUE FOCH", 300, 26, 130, 390, 900, 1100, 1275);
         AngleCase        c33 = new AngleCase("CAISSE DE COMMUNAUTE");
