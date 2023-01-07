@@ -59,20 +59,24 @@ public class PropertyCase extends BuyableCase {
 
     @Override
     public void becomeBought() {
+        System.out.println(this.getName() + " state changed from " + this.state + " to BoughtState");
         this.state = new BoughtState(this);
     }
 
     @Override
     public void becomeBuildable() {
+        System.out.println(this.getName() + " state changed from " + this.state + " to BuildableState");
         this.state = new BuildableState(this);
     }
 
     @Override
     public void becomeHotelBuilt() {
+        System.out.println(this.getName() + " state changed from " + this.state + " to HotelBuiltState");
         this.state = new HotelBuiltState(this);
     }
     @Override
-    public void becomeWaitingbuildableState(){
+    public void becomeWaitingBuildableState() {
+        System.out.println(this.getName() + " state changed from " + this.state + " to WaitingBuildableState");
         this.state = new WaitingBuildableState(this);
     }
     @Override

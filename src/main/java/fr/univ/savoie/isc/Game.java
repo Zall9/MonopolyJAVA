@@ -198,7 +198,8 @@ public class Game {
 
         for(int i=0; i<numberOfDice; i++)
             diceResult += new Random().nextInt(6) + 1;
-        return diceResult;
+        //return diceResult;
+        return 1;
     }
 
     public void onClickBuy() {

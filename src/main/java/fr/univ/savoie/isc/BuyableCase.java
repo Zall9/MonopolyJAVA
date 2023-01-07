@@ -18,7 +18,7 @@ public abstract class BuyableCase extends Case {
 
     public abstract void becomeHotelBuilt();
 
-    public abstract void becomeWaitingbuildableState();
+    public abstract void becomeWaitingBuildableState();
 
     public abstract void showBuildable();
 

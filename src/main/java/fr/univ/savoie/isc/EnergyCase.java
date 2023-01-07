@@ -21,7 +21,7 @@ public class EnergyCase extends BuyableCase {
     }
 
     @Override
-    public void becomeWaitingbuildableState() {
+    public void becomeWaitingBuildableState() {
 
     }
 

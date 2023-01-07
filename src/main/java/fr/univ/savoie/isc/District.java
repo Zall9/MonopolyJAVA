@@ -34,7 +34,7 @@ public class District {
 
 
     public void manageDistrictState() {
-        // TODO manageDistrictState District
+        // TODO manageDistrictState District --> HotelBuiltState
         /*
         - si proriété achetée : BoughtState
         - si toutes achetées par le même joueur : BuildableState
@@ -42,26 +42,27 @@ public class District {
         - si hotel construit : HotelBuiltState
         */
         for (PropertyCase pc : this.propertyCases) {
+
+            // check if bought
             if (pc.getOwner() != null) {
                 pc.becomeBought();
             }
-            for (PropertyCase pc2 : this.propertyCases) {
-                if (pc2.getOwner() != pc.getOwner()) {
-                    //pardon madame pour le break :(
-                    break;
-                }
-                pc.becomeBuildable();
-            }
-            if (pc.getNbHouse() == 4) {
-                pc.becomeHotelBuilt();
-            }
-            for (PropertyCase pc3 : this.propertyCases) {
-                if (pc3.getOwner() == pc.getOwner()) {
-                    if (pc3.getDistrict() == pc.getDistrict() && pc3.getNbHouse() < pc.getNbHouse()) {
-                        pc.becomeWaitingbuildableState();
-                    }
 
-                }
+            // check if buildable
+            if (haveSameOwner()) {
+                // une fois qu'on est assuré que les propriétés ont le même propriétaire :
+                // si pc a moins (ou le même nombre) de construction que les autres --> becomeBuildable()
+                // si pc a plus de construction qu'au moins une autre propriété --> becomeWaitingbuildableState()
+                if (checkIsBuildable(pc))
+                    pc.becomeBuildable();
+                else
+                    pc.becomeWaitingBuildableState();
+            }
+
+
+            // TODO problème ici, a voir quand on arrive a la construction mais a mon avis problème
+            if (pc.getNbHouse() == 4) { // > 4 nan ?
+                pc.becomeHotelBuilt();
             }
         }
     }
@@ -82,6 +83,19 @@ public class District {
             if (!ownerName.equals(owner.getName())) return false;
         }
 
+        return true;
+    }
+
+    /**
+     * This fonction should only be used inside an if(this.haveSameOwner()) statement
+     * @param pc
+     * @return
+     */
+    private boolean checkIsBuildable(PropertyCase pc) {
+        for (PropertyCase other : this.propertyCases) {
+            if (other.getNbHouse() < pc.getNbHouse())
+                return false;
+        }
         return true;
     }
 }
