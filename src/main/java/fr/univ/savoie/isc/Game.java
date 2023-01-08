@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Game {
 
+    public static int diceResult;
+
     private List<Player> players = new ArrayList<Player>();
     private List<Case> cases = new ArrayList<Case>();
     private List<District> districts = new ArrayList<District>();
@@ -198,8 +200,13 @@ public class Game {
 
         for(int i=0; i<numberOfDice; i++)
             diceResult += new Random().nextInt(6) + 1;
-        //return diceResult;
-        return 1;
+
+        // for test purpose
+        diceResult = 2;
+        // ** //
+
+        Game.diceResult = diceResult;
+        return diceResult;
     }
 
     public void onClickShowBuildable() {

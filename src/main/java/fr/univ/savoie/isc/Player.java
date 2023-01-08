@@ -119,4 +119,14 @@ public class Player {
         }
         return nbTrainStation;
     }
+
+    public int getNbEnergy() {
+        int nbEnergy = 0;
+        for (BuyableCase bc : this.properties) {
+            if (bc instanceof EnergyCase) {
+                nbEnergy++;
+            }
+        }
+        return nbEnergy;
+    }
 }
