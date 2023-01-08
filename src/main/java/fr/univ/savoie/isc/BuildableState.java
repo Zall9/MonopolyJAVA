@@ -41,7 +41,7 @@ public class BuildableState implements State {
 
 
     public void build() {
-        int housePrice = this.propertyCase.getHousePrice();
+        int housePrice = this.propertyCase.getDistrict().getBuildPrice();
         Player owner = this.propertyCase.getOwner();
 
         if (owner.getMoney() < housePrice) {

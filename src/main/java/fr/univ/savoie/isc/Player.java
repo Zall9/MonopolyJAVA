@@ -55,7 +55,7 @@ public class Player {
         this.money -= buyableCase.getPrice();
     }
 
-    public void showMyBuildables() {
+    public void manageBuilding() {
         List<BuyableCase> buildables = new ArrayList<BuyableCase>();
 
         for (BuyableCase bc: this.properties) {

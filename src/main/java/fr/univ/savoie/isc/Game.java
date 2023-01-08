@@ -203,7 +203,7 @@ public class Game {
     }
 
     public void onClickShowBuildable() {
-        this.currentPlayer.showMyBuildables();
+        this.currentPlayer.manageBuilding();
     }
 
     public void initGame() {

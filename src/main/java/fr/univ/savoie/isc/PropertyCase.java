@@ -9,8 +9,6 @@ public class PropertyCase extends BuyableCase {
     private int rent4House;
     private int rentHotel;
 
-    private int housePrice;
-
     private int nbHouse;
 
     private State state;
@@ -25,13 +23,6 @@ public class PropertyCase extends BuyableCase {
         this.rentHotel = rentHotel;
         this.nbHouse = 0;
         this.state = new AvailableState(this);
-
-        //TODO housePrice dans le constructueur différent pour chaque carte, vraiment la flemme de la faire pour toutes les cartes :(
-        this.housePrice = 100;
-    }
-
-    public int getHousePrice() {
-        return this.housePrice;
     }
 
     public int getRentEmpty() {
