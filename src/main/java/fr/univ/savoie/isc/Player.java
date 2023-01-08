@@ -105,4 +105,8 @@ public class Player {
     public void buyHouse(int housePrice) {
         this.money -= housePrice;
     }
+
+    public void payTax(int cost) {
+        this.money -= cost;
+    }
 }

@@ -15,8 +15,8 @@ public class TaxCase extends Case {
 
     @Override
     public void action(Player player) {
-        // TODO action TaxCase
-        
+        System.out.println("Tax : " + this.cost + "€");
+        player.payTax(this.cost);
     }
 
     @Override
