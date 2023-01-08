@@ -1,5 +1,8 @@
 package fr.univ.savoie.isc;
 
+
+import java.util.Scanner;
+
 public class TrainStationCase extends BuyableCase {
 
     private int rent1Station;
@@ -10,6 +13,8 @@ public class TrainStationCase extends BuyableCase {
     public TrainStationCase(String name, int price) {
         super(name, price);
     }
+
+
 
     private int getRent1Station() {
         return this.rent1Station;
@@ -29,8 +34,11 @@ public class TrainStationCase extends BuyableCase {
 
     @Override
     public void action(Player player) {
-        //TODO action TrainStationCase
-
+        //TODO
+        if (getOwner()!=null){
+            System.out.println("You need to pay "+ getPrice());
+            player.pay(getOwner(),getPrice());
+        }
     }
 
     @Override
@@ -53,6 +61,18 @@ public class TrainStationCase extends BuyableCase {
     public void build() { }
 
     @Override
-    public void actionOnPass(Player player) { }
+    public void actionOnPass(Player player) {
+        System.out.println("You are on the " + getName());
+        if(getOwner()==null){
+            System.out.println("You can buy this property for "+ getPrice());
+            System.out.println("1-Yes");
+            System.out.println("2-No");
+            int choice = new Scanner(System.in).nextInt();
+            if (choice == 1) {
+                setOwner(player);
+                player.buy(this);
+            }
+        }
+    }
 
 }
