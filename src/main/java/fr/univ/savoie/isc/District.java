@@ -34,7 +34,6 @@ public class District {
 
 
     public void manageDistrictState() {
-        // TODO manageDistrictState District --> HotelBuiltState
         /*
         - si proriété achetée : BoughtState
         - si toutes achetées par le même joueur : BuildableState
@@ -59,9 +58,8 @@ public class District {
                     pc.becomeWaitingBuildableState();
             }
 
-
-            // TODO problème ici, a voir quand on arrive a la construction mais a mon avis problème
-            if (pc.getNbHouse() == 4) { // > 4 nan ?
+            // check if hotel is built
+            if (pc.getNbHouse() == 5) {
                 pc.becomeHotelBuilt();
             }
         }

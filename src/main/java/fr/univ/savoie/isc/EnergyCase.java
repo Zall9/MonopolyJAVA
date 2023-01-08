@@ -29,7 +29,7 @@ public class EnergyCase extends BuyableCase {
     public void becomeBought() { }
 
     @Override
-    public void showBuildable() { }
+    public boolean isBuildable() { return false; }
 
     @Override
     public void build() { }

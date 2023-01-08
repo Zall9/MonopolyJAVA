@@ -20,7 +20,7 @@ public abstract class BuyableCase extends Case {
 
     public abstract void becomeWaitingBuildableState();
 
-    public abstract void showBuildable();
+    public abstract boolean isBuildable();
 
     public abstract void build();
 

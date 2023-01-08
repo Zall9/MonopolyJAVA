@@ -2,6 +2,7 @@ package fr.univ.savoie.isc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Player {
 
@@ -55,8 +56,32 @@ public class Player {
     }
 
     public void showMyBuildables() {
+        List<BuyableCase> buildables = new ArrayList<BuyableCase>();
+
         for (BuyableCase bc: this.properties) {
-            bc.showBuildable();
+            if (bc.isBuildable()) {
+                buildables.add(bc);
+            }
+        }
+
+        if (buildables.size() == 0) {
+            System.out.println("You have no Buildable properties");
+            return;
+        }
+
+        System.out.println("On which property would you like to build ?");
+        int i = 1;
+        for(BuyableCase buildable : buildables) {
+            System.out.println(i + " - " + buildable.getName());
+            i++;
+        }
+        System.out.println(i + " - Cancel");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+
+        if (choice == i || choice > buildables.size() || choice <= 0) return;
+        else {
+            buildables.get(choice - 1).build();
         }
     }
 
@@ -75,5 +100,9 @@ public class Player {
 
     public String getName() {
         return this.name;
+    }
+
+    public void buyHouse(int housePrice) {
+        this.money -= housePrice;
     }
 }

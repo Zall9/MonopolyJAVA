@@ -11,33 +11,15 @@ public class BoughtState implements State {
 
     public void action(Player player) {
         System.out.println(this.propertyCase.getName() + " is own by " + this.propertyCase.getOwner().getName());
-        int rent = 0;
-
-        switch (this.propertyCase.getNbHouse()) {
-            case 0:
-                rent = this.propertyCase.getRentEmpty();
-                break;
-            case 1:
-                rent = this.propertyCase.getRent1House();
-                break;
-            case 2:
-                rent = this.propertyCase.getRent2House();
-                break;
-            case 3:
-                rent = this.propertyCase.getRent3House();
-                break;
-            case 4:
-                rent = this.propertyCase.getRent4House();
-                break;
-        }
-
+        // dans cet état, il n'y a pas de maison construite
+        int rent = this.propertyCase.getRentEmpty();
         System.out.println("You need to pay " + rent + "€");
         player.pay(this.propertyCase.getOwner(), rent);
     }
 
     public void buy() { }
 
-    public void showBuildable() { }
+    public boolean isBuildable() { return false; }
 
     public void build() { }
 

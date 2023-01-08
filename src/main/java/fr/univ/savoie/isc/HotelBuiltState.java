@@ -9,12 +9,16 @@ public class HotelBuiltState implements State {
     }
 
     public void action(Player player) {
-        //TODO action HotelBuiltState
+        System.out.println(this.propertyCase.getName() + " is own by " + this.propertyCase.getOwner().getName());
+        // dans cet état, il y a un hotel constuit
+        int rent = this.propertyCase.getRentHotel();
+        System.out.println("You need to pay " + rent + "€");
+        player.pay(this.propertyCase.getOwner(), rent);
     }
 
     public void buy() { }
 
-    public void showBuildable() { }
+    public boolean isBuildable() { return false; }
 
     public void build() { }
 

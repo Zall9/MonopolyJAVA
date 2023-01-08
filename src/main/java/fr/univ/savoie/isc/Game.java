@@ -202,18 +202,9 @@ public class Game {
         return 1;
     }
 
-    public void onClickBuy() {
-        //TODO onClickBuy Game
-    }
-
     public void onClickShowBuildable() {
         this.currentPlayer.showMyBuildables();
     }
-
-    public void onClickBuild() {
-        //TODO onClickBuild Game
-    }
-
 
     public void initGame() {
         Scanner scanner = new Scanner(System.in);
@@ -243,15 +234,35 @@ public class Game {
 
     private void nextTurn() {
         this.currentPlayer = players.get(currentPlayerIndex);
-        int diceResult = throwDice();
+
 
         System.out.println(this.currentPlayer.getName() + " turn !");
+        System.out.println("What do you want to do ?");
+        System.out.println("1 - Throw dice to move on");
+        System.out.println("2 - Build");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                this.throwDiceAndMove();
+                break;
+            case 2:
+                this.onClickShowBuildable();
+                this.nextTurn();
+                break;
+            default:
+                this.nextTurn();
+        }
+    }
+
+    private void throwDiceAndMove() {
+        int diceResult = throwDice();
         System.out.println("Dice Throw : " + diceResult);
 
         this.currentPlayer.move(diceResult);
         System.out.println("current player have: " + this.currentPlayer.getMoney() + "€");
         handleNewTurn();
-
     }
 
     private void handleNewTurn() {

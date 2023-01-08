@@ -29,7 +29,7 @@ public class AvailableState implements State {
         this.propertyCase.getDistrict().manageDistrictState();
     }
 
-    public void showBuildable() { }
+    public boolean isBuildable() { return false; }
 
     public void build() { }
 
