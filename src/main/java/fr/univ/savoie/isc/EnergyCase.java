@@ -24,7 +24,7 @@ public class EnergyCase extends BuyableCase {
         {
             System.out.println(this.getName() + " is own by " + this.getOwner().getName());
 
-            // il faut trouver le nombre de gare possédées par le joueur
+            // il faut trouver le nombre de case energy possédées par le joueur
             int nbEnergy = this.getOwner().getNbEnergy();
             int rent = 0;
 
