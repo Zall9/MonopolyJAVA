@@ -12,6 +12,10 @@ public class TrainStationCase extends BuyableCase {
 
     public TrainStationCase(String name, int price) {
         super(name, price);
+        this.rent1Station = 25;
+        this.rent2Station = 50;
+        this.rent3Station = 100;
+        this.rent4Station = 200;
     }
 
 
@@ -34,10 +38,41 @@ public class TrainStationCase extends BuyableCase {
 
     @Override
     public void action(Player player) {
-        //TODO
-        if (getOwner()!=null){
-            System.out.println("You need to pay "+ getPrice());
-            player.pay(getOwner(),getPrice());
+        // si la case est available, on propose de l'acheté
+        if (this.getOwner() == null) {
+            System.out.println("You can buy this property for "+ getPrice() + "€");
+            System.out.println("1 - Yes");
+            System.out.println("2 - No");
+            int choice = new Scanner(System.in).nextInt();
+            if (choice == 1) {
+                player.buy(this);
+            }
+        }
+        else // sinon on fait payer le joueur
+        {
+            System.out.println(this.getName() + " is own by " + this.getOwner().getName());
+
+            // il faut trouver le nombre de gare possédées par le joueur
+            int nbTrainStation = this.getOwner().getNbTrainStation();
+            int rent = 0;
+
+            switch (nbTrainStation) {
+                case 1:
+                    rent = this.getRent1Station();
+                    break;
+                case 2:
+                    rent = this.getRent2Station();
+                    break;
+                case 3:
+                    rent = this.getRent3Station();
+                    break;
+                case 4:
+                    rent = this.getRent4Station();
+                    break;
+            }
+
+            System.out.println("You need to pay " + rent + "€");
+            player.pay(this.getOwner(), rent);
         }
     }
 
@@ -61,18 +96,6 @@ public class TrainStationCase extends BuyableCase {
     public void build() { }
 
     @Override
-    public void actionOnPass(Player player) {
-        System.out.println("You are on the " + getName());
-        if(getOwner()==null){
-            System.out.println("You can buy this property for "+ getPrice());
-            System.out.println("1-Yes");
-            System.out.println("2-No");
-            int choice = new Scanner(System.in).nextInt();
-            if (choice == 1) {
-                setOwner(player);
-                player.buy(this);
-            }
-        }
-    }
+    public void actionOnPass(Player player) { }
 
 }

@@ -109,4 +109,14 @@ public class Player {
     public void payTax(int cost) {
         this.money -= cost;
     }
+
+    public int getNbTrainStation() {
+        int nbTrainStation = 0;
+        for (BuyableCase bc : this.properties) {
+            if (bc instanceof TrainStationCase) {
+                nbTrainStation++;
+            }
+        }
+        return nbTrainStation;
+    }
 }
